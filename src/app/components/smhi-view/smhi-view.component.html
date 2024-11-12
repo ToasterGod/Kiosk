@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <td><img src="{{ baseUrl }}{{ forecast?.symbol }}" /> </td>
+    </tr>
+    <tr>
+        <td>{{ forecast?.temperature?.toFixed() }}&deg; C</td>
+    </tr>
+    <tr>
+        <td>{{ forecast?.precipitation }}</td>
+    </tr>
+    <tr>
+        <td class="smalltext">Vindhastighet: {{ forecast?.windSpeed?.toFixed() }} m/s </td>
+    </tr>
+</table>

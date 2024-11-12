@@ -1,0 +1,40 @@
+<table>
+  <tr>
+    @for(forecast of forecasts?.slice(0,7); track forecast.validTime){
+    <td>
+      <table class="dotted">
+        <tr>
+          <td>{{ forecast?.validTime! | date : "HH:mm" : "sv-SE" }}</td>
+        </tr>
+        <img src="{{ baseUrl }}{{ forecast?.symbol }}" />
+        <tr>
+          <td>{{ forecast?.temperature?.toFixed() }}&deg; C</td>
+        </tr>
+        <tr>
+          <td>Fukt: {{ forecast?.humidity!.toFixed() }}%</td>
+        </tr>
+      </table>
+    </td>
+    }
+  </tr>
+</table>
+<table>
+  <tr>
+    @for(forecast of noonValues?.slice(0,7); track forecast.validTime){
+    <td>
+      <table class="dotted">
+        <tr>
+          <td>{{ forecast?.validTime! | date : "dd/MM HH:mm" : "sv-SE" }}</td>
+        </tr>
+        <img src="{{ baseUrl }}{{ forecast?.symbol }}" />
+        <tr>
+          <td>{{ forecast?.temperature!.toFixed() }}&deg; C</td>
+        </tr>
+        <tr>
+          <td>Fukt: {{ forecast?.humidity!.toFixed() }}%</td>
+        </tr>
+      </table>
+    </td>
+    }
+  </tr>
+</table>

@@ -1,0 +1,9 @@
+<table>
+    @for(event of events; track event.expirationDate){
+    <tr>
+        <td>
+            {{calculateLocale(event?.registeredAt!) | date: 'yyyy-MM-dd':'sv-SE'}}:
+        </td>
+    </tr>
+    }
+</table>

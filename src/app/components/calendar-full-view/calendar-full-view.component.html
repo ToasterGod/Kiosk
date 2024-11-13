@@ -1,0 +1,23 @@
+@if (events && events.length > 0) {
+    <table >
+        @for(event of events; track event.startTime){
+                <!-- <tr>
+                    <td class="content">
+                        <hr />
+                    </td>
+                </tr> -->
+                <tr>
+                    <td><h2>{{ event?.summary }}</h2></td>
+                </tr>
+                <tr>
+                    <td ><h3>{{calculateLocale(event?.startTime!) | date: 'dd MMMM HH:mm':'sv-SE'}}
+                    - {{calculateLocale(event?.endTime!) | date: 'dd MMMM HH:mm':'sv-SE'}}</h3></td>
+                </tr>
+                <tr>
+                    <td >{{ event?.description }}</td>
+                </tr>
+        }
+    </table>
+} @else {
+    <h2>Inga händelser att visa</h2>
+}

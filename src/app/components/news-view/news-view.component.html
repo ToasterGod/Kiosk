@@ -1,0 +1,34 @@
+<table>
+    <tr>
+        @for(event of events; track event.date; let idx = $index){
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        {{event.title}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        {{calculateLocale(event?.date!) | date: 'yyyy-MM-dd':'sv-SE'}}
+                    </td>
+                </tr>
+            </table>
+            <!-- @for(event of events; track event.date; let idx = $index){
+                <table>
+                    <tr>
+                        <td>
+                            {{event.title}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            {{calculateLocale(event?.date!) | date: 'yyyy-MM-dd':'sv-SE'}}
+                        </td>
+                    </tr>
+                </table>
+                } -->
+            </td>
+        }
+    </tr>
+</table>

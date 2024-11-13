@@ -1,9 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { BarometerService } from '../../services/barometer.service';
 import { BarometerValue } from '../../models/barometer-value.model';
-import { Subscription, interval } from 'rxjs';
-import { MatCardModule } from '@angular/material/card';
-import { CommonModule, DatePipe } from '@angular/common';
 import { Color, NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
 import { environment } from '../../environments/environment';
 import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';

@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>
+            <table>
+                @for (event of events; track $index) {
+                <tr>
+                    <td>
+                        {{calculateLocale(event?.date!) | date: 'yyyy-MM-dd':'sv-SE'}}:
+                    </td>
+                </tr>
+                <table>
+                    <tr>
+                        <td rowspan="2"><img src="{{event?.imageUrl}}" /></td>
+                        <td style="height:10px;font-size:larger;font-weight: bold;">{{event?.title}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{event?.intro}}</td>
+                    </tr>
+                </table>
+                }
+            </table>
+        </td>
+    </tr>
+</table>>

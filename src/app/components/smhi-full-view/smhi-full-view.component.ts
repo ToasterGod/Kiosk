@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { interval, Subscription } from 'rxjs';
 import { SmhiService } from '../../services/smhi.service';
 import { ForecastValue } from '../../models/forecast-value.model';
 import { DatePipe } from '@angular/common';
@@ -17,7 +16,6 @@ export class SmhiFullViewComponent {
   public forecast?: ForecastValue;
   public forecasts?: ForecastValue[];
   public noonValues?: ForecastValue[];
-  private updateSubscription?: Subscription;
   public baseUrl: string = environment.weatherUrl;
 
   ngOnInit() {

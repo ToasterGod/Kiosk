@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class BarometerApiService {
+export class BarometerApiService {  
   private http = inject(HttpClient);
   private baseUrl: string = environment.barometerUrl;
 
@@ -15,5 +15,10 @@ export class BarometerApiService {
     // console.log(this.baseUrl);
     const url = this.baseUrl + '/barometerweekly';
     return this.http.get<BarometerValue[]>(url);
+  }
+
+  getLatestValue(): Observable<BarometerValue> {
+    const url = this.baseUrl + '/barometerlatest';
+    return this.http.get<BarometerValue>(url);
   }
 }

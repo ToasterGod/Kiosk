@@ -9,11 +9,12 @@ import { CalendarViewComponent } from "./components/calendar-view/calendar-view.
 import { CalendarFullViewComponent } from "./components/calendar-full-view/calendar-full-view.component";
 import { InfoViewComponent } from "./components/info-view/info-view.component";
 import { FilestreamViewComponent } from "./components/filestream-view/filestream-view.component";
+import { CurrentViewComponent } from "./components/current-view/current-view.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [BarometerViewComponent, MatCardModule, SmhiFullViewComponent, SmhiViewComponent, NewsViewComponent, NewsFullViewComponent, CalendarViewComponent, CalendarFullViewComponent, InfoViewComponent, FilestreamViewComponent],
+  imports: [BarometerViewComponent, MatCardModule, SmhiFullViewComponent, SmhiViewComponent, NewsViewComponent, NewsFullViewComponent, CalendarViewComponent, CalendarFullViewComponent, InfoViewComponent, FilestreamViewComponent, CurrentViewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

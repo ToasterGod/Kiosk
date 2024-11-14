@@ -1,11 +1,34 @@
-<mat-card>
-    <mat-card-header>
-        <mat-card-title> </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <app-smhi-full-view></app-smhi-full-view>
-        <!-- <app-smhi-view></app-smhi-view> -->
-        <!-- <app-barometer-view></app-barometer-view> -->
+<div class="container">
+    <div class="upperleft">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container"><app-smhi-view></app-smhi-view></div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <div class="right">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container"><app-smhi-full-view></app-smhi-full-view></div>
+        <!-- <p><app-barometer-view></app-barometer-view></p> -->
     </mat-card-content>
-    <mat-card-footer> </mat-card-footer>
-</mat-card>
+      </mat-card>
+    </div>
+  
+    <div class="lowerleft">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container">Content</div>>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+    <div class="bottom">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container">Content</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

@@ -1,9 +1,21 @@
+app-smhi-full-view{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    min-height:100%;
+    min-width:100%;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+table .dotted{
+    border: 1pt dotted;
+}
 tr {
     text-align:center;
 }
 .smalltext{
     font-size: smaller;
-}
-table .dotted{
-    border: 1pt dotted;
 }

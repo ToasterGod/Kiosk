@@ -28,7 +28,7 @@ export class SmhiViewComponent {
 
   getForecasts() {
     this.api.getCurrentForecast().then((forecast) => {
-      console.log(forecast);
+      // console.log(forecast);
       this.forecast = forecast;
     });
   }

@@ -1,19 +1,34 @@
-<mat-card>
-    <mat-card-content>
-        <!-- <app-filestream-view></app-filestream-view> -->
-        
-        <app-current-view></app-current-view>
-        <app-news-view></app-news-view>
-        <!-- <app-news-full-view></app-news-full-view> -->
-
-        <!-- <app-info-view></app-info-view> -->
-
-        <!-- <app-calendar-full-view></app-calendar-full-view> -->
-        <!-- <app-calendar-view></app-calendar-view> -->
-
-        <!-- <app-smhi-full-view></app-smhi-full-view> -->
-        <!-- <app-smhi-view></app-smhi-view> -->
-
-        <!-- <app-barometer-view></app-barometer-view> -->
+<div class="container">
+    <div class="upperleft">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container"><app-smhi-view></app-smhi-view></div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  
+    <div class="right">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container"><app-smhi-full-view></app-smhi-full-view></div>
+        <!-- <p><app-barometer-view></app-barometer-view></p> -->
     </mat-card-content>
-</mat-card>
+      </mat-card>
+    </div>
+  
+    <div class="lowerleft">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container">Content</div>>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    
+    <div class="bottom">
+      <mat-card>
+        <mat-card-content>
+          <div class="table-container">Content</div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

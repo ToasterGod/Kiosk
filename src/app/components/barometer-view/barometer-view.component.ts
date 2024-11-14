@@ -68,13 +68,13 @@ export class BarometerViewComponent {
   getValues() {
     this.api.getAllValues().then((values) => {
       this.values = values;
-      console.log(this.values);
+      // console.log(this.values);
       this.setView();
     });
   }
 
   setView() {
-    console.log("setting view");
+    // console.log("setting view");
     this.multi = [
       {
         name: 'Temperatur',

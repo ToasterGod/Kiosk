@@ -17,7 +17,6 @@ export class SmhiFullViewComponent {
   public forecast?: ForecastValue;
   public forecasts?: ForecastValue[];
   public noonValues?: ForecastValue[];
-  private updateSubscription?: Subscription;
   public baseUrl: string = environment.weatherUrl;
 
   ngOnInit() {
@@ -33,15 +32,15 @@ export class SmhiFullViewComponent {
   
   getForecasts() {
     this.api.getAllForecasts().then((forecasts) => {
-      console.log(forecasts);
+      // console.log(forecasts);
       this.forecasts = forecasts;
       this.forecast = forecasts[0];
       this.noonValues = forecasts!.filter((forecast) => {
         let test = new Date(forecast!.validTime!).getUTCHours();
-        console.log(test);
+        // console.log(test);
         return test == 12;
       });
     });
-    console.log(this.noonValues);
+    // console.log(this.noonValues);
   }
 }

@@ -5,28 +5,33 @@ import { ForecastValue } from '../../models/forecast-value.model';
 import { BarometerValue } from '../../models/barometer-value.model';
 import { environment } from '../../environments/environment';
 import { HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
+import { interval } from 'rxjs';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-current-view',
   standalone: true,
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './current-view.component.html',
   styleUrl: './current-view.component.scss'
 })
 export class CurrentViewComponent {
   private barometerApi = inject(BarometerService);
   private smhiApi = inject(SmhiService);
+  public date: Date = new Date();
   public barometerValue?: BarometerValue;
   public smhiValue?: ForecastValue;
-  private smhiUrl: string = environment.weatherUrl;
+  public smhiUrl: string = environment.weatherUrl;
   private barometerUrl: string = environment.barometerUrl;
   private barometerHubConnectionBuilder!: HubConnection;
   private smhiHubConnectionBuilder!: HubConnection;
 
   ngOnInit() {
-    console.log("ng oninit");
     this.getSmhiValue();
     this.getBarometerValue();
+    interval(1000).subscribe(() => {
+      this.date = new Date();
+    });
   }
 
   getSmhiValue() {
@@ -51,8 +56,8 @@ export class CurrentViewComponent {
       this.smhiValue = result;
       console.log('Received new smhiValue: ');
       console.log(result);
-      console.log('smhiValue: ');
-      console.log(this.smhiValue);
+      // console.log('smhiValue: ');
+      // console.log(this.smhiValue);
     });
   }
 
@@ -79,8 +84,15 @@ export class CurrentViewComponent {
       this.barometerValue = result;
       console.log('Received new barometerValue: ');
       console.log(result);
-      console.log('barometerValue: ');
-      console.log(this.barometerValue);
+      // console.log('barometerValue: ');
+      // console.log(this.barometerValue);
     });
+  }
+
+  calculateLocale(date: Date) {
+    date = new Date(date);
+    var offset = date.getTimezoneOffset() * -1;
+    date.setTime(date.getTime() + offset);
+    return date;
   }
 }

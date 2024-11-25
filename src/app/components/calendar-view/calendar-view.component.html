@@ -1,8 +1,8 @@
 <table width="100%">
     @for(event of events; track event.startTime){
     <tr width="100%">
-        <td width="50%" align="left">{{calculateLocale(event?.startTime!) | date: 'dd MMMM HH:mm':'sv-SE'}}</td>
-        <td width="50%" align="left">{{ event?.summary }}</td>
+        <td width="35%" align="left" class="cell-text">{{calculateLocale(event?.startTime!) | date: 'dd MMM HH:mm':'sv-SE'}}</td>
+        <td class="cell-text" align="left">{{ event?.summary }}</td>
     </tr>
     }
 </table>

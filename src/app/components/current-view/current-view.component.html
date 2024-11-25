@@ -1,8 +1,9 @@
 <table>
-    <tr><td style="font-size: large;"><img src="{{ smhiUrl }}{{ smhiValue?.symbol }}" /></td></tr>
-    <tr><td style="font-size: large;">Ute: {{smhiValue?.temperature?.toFixed()}}&deg; C</td></tr>
-    <tr><td style="font-size: large;">Inne: {{barometerValue?.temperature?.toFixed()}}&deg; C</td></tr>
+    <tr><td><img width="100" src="sogeti-logo.svg"/></td></tr>
+    <tr><td class="cell-text"><img src="{{ smhiUrl }}{{ smhiValue?.symbol }}" /></td></tr>
+    <tr><td class="cell-text">Ute: {{smhiValue?.temperature?.toFixed()}}&deg; C</td></tr>
+    <tr><td class="cell-text">Inne: {{barometerValue?.temperature?.toFixed()}}&deg; C</td></tr>
     <tr><td>&nbsp;</td></tr>
-    <tr><td style="font-size: xx-large;"><b>{{calculateLocale(date) | date: 'HH:mm':'sv-SE'}}</b></td></tr>
-    <tr><td style="font-size: large;">{{calculateLocale(date) | date: 'EEEE dd MMMM':'sv-SE'}}</td></tr>
+    <tr><td class="large-cell-text"><b>{{calculateLocale(date) | date: 'HH:mm':'sv-SE'}}</b></td></tr>
+    <tr><td class="cell-text">{{calculateLocale(date) | date: 'EEEE dd MMMM':'sv-SE'}}</td></tr>
 </table>
